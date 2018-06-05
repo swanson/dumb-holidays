@@ -1,6 +1,5 @@
 require "excon"
 require "slack-ruby-client"
-require "pry"
 require "json"
 require "fuzzy_match"
 
@@ -15,6 +14,7 @@ class DumbHolidays
   end
 
   def run!(args = {})
+    puts "Finding holidays for #{Time.now}"
     holidays = get_todays_holidays
 
     post_to_slack build_msg(holidays)
@@ -29,6 +29,8 @@ class DumbHolidays
   end
 
   def post_to_slack(msg)
+    puts "Sending to Slack:\n#{msg}"
+
     @slack.chat_postMessage(channel: @channel,
       text: msg,
       as_user: true
