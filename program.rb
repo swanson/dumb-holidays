@@ -1,4 +1,6 @@
-require 'dotenv/load'
+require 'dotenv'
+Dotenv.load
+
 require_relative "./dumb_holidays"
 
 today = Time.now
