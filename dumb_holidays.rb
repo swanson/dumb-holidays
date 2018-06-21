@@ -10,7 +10,6 @@ class DumbHolidays
   def initialize(slack_client, channel = "general")
     @slack = slack_client
     @channel = channel
-    @emojis = @slack.emoji_list.emoji.keys
   end
 
   def run!(args = {})
@@ -39,12 +38,14 @@ class DumbHolidays
 
   def build_msg(holidays = [])
     msg = [":tada: *Today's Dumb Holidays* :tada:\n"]
-    
-    holidays.each do |h|
-      keyword = find_keyword(h)
-      closest_emoji = FuzzyMatch.new(slack_emojis).find(keyword)
 
-      msg << ":#{closest_emoji}: #{h}"
+    fuzzy_matcher = FuzzyMatch.new(slack_emojis)
+
+    holidays.each do |holiday|
+      cleaned = clean(holiday)
+      closest_emoji = fuzzy_matcher.find(cleaned)
+
+      msg << ":#{closest_emoji}: #{holiday}"
     end
 
     msg << "\nFellow humans, please take a moment to celebrate these dumb holidays."
@@ -52,16 +53,24 @@ class DumbHolidays
     msg.join("\n")
   end
 
-  def find_keyword(title)
-    title.downcase.gsub("day", "")
-      .gsub("world", "")
-      .gsub("earth", "")
-      .gsub("national", "")
-      .gsub("international", "")
-      .gsub("festival", "")
-      .gsub("the", "")
-      .gsub("of", "")
-      .gsub("your", "")
+  def strip_words(string, words)
+    words.each_with_object(string) do |word, accum|
+      accum.gsub!(/\b#{word}\b/i, "")
+    end
+  end
+
+  def clean(holiday)
+    strip_words(holiday, [
+      "day",
+      "world",
+      "earth",
+      "international",
+      "national",
+      "festival",
+      "the",
+      "of",
+      "your",
+    ])
   end
 
   def slack_emojis
