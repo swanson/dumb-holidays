@@ -34,6 +34,7 @@ GEM
       hashie
       websocket-driver
     slop (3.6.0)
+    stopwords (0.2)
     thread_safe (0.3.6)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
@@ -50,6 +51,7 @@ DEPENDENCIES
   fuzzy_match
   pry
   slack-ruby-client
+  stopwords
 
 BUNDLED WITH
    1.12.5

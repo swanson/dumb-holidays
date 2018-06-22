@@ -2,6 +2,7 @@ require "excon"
 require "slack-ruby-client"
 require "json"
 require "fuzzy_match"
+require "stopwords"
 
 class DumbHolidays
 
@@ -39,11 +40,12 @@ class DumbHolidays
   def build_msg(holidays = [])
     msg = [":tada: *Today's Dumb Holidays* :tada:\n"]
 
+    keyword_filter = KeywordFilter.new
     fuzzy_matcher = FuzzyMatch.new(slack_emojis)
 
     holidays.each do |holiday|
-      cleaned = clean(holiday)
-      closest_emoji = fuzzy_matcher.find(cleaned)
+      keyword = keyword_filter.filter(holiday)
+      closest_emoji = fuzzy_matcher.find(keyword)
 
       msg << ":#{closest_emoji}: #{holiday}"
     end
@@ -53,30 +55,50 @@ class DumbHolidays
     msg.join("\n")
   end
 
-  def strip_words(string, words)
-    words.each_with_object(string) do |word, accum|
-      accum.gsub!(/\b#{word}\b/i, "")
-    end
-  end
-
-  def clean(holiday)
-    strip_words(holiday, [
-      "day",
-      "world",
-      "earth",
-      "international",
-      "national",
-      "festival",
-      "the",
-      "of",
-      "your",
-    ])
-  end
-
   def slack_emojis
     standard = JSON.parse(File.open("./emojis.json").read).map{|v| v["short_name"]}
     custom = @slack.emoji_list.emoji.keys
 
     [standard, custom].flatten.sort
+  end
+end
+
+class KeywordFilter
+
+  SPACE = " "
+
+  def filter(source = "")
+    source
+      .downcase
+      .strip
+      .split(SPACE)
+      .reject{|w| Stopwords.is? w }
+      .reject{|w| HolidayStopwords.is? w }
+      .join(SPACE)
+  end
+end
+
+class HolidayStopwords
+
+  STOP_WORDS = %{
+    american
+    appreciation
+    awareness
+    day
+    earth
+    festival
+    global
+    go
+    international
+    language
+    national
+    pride
+    solidarity
+    world
+    worldwide
+  }
+
+  def self.is?(word)
+    STOP_WORDS.include? word
   end
 end
