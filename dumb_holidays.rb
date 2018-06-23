@@ -46,7 +46,6 @@ class DumbHolidays
 
     holidays.each do |holiday|
       keyword = keyword_filter.filter(holiday)
-      puts keyword
       closest_emoji = fuzzy_emoji.closest(keyword)
 
       msg << ":#{closest_emoji}: #{holiday}"
