@@ -94,6 +94,11 @@ class HolidayStopwords
     national
     pride
     solidarity
+    take
+    tech
+    thing
+    work
+    worker
     world
     worldwide
   }
