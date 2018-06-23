@@ -1,8 +1,9 @@
 require "excon"
 require "slack-ruby-client"
 require "json"
-require "fuzzy_match"
 require "stopwords"
+
+require_relative "./fuzzy_emoji"
 
 class DumbHolidays
 
@@ -41,11 +42,12 @@ class DumbHolidays
     msg = [":tada: *Today's Dumb Holidays* :tada:\n"]
 
     keyword_filter = KeywordFilter.new
-    fuzzy_matcher = FuzzyMatch.new(slack_emojis)
+    fuzzy_emoji = FuzzyEmoji.new(slack_emojis)
 
     holidays.each do |holiday|
       keyword = keyword_filter.filter(holiday)
-      closest_emoji = fuzzy_matcher.find(keyword)
+      puts keyword
+      closest_emoji = fuzzy_emoji.closest(keyword)
 
       msg << ":#{closest_emoji}: #{holiday}"
     end
@@ -56,7 +58,7 @@ class DumbHolidays
   end
 
   def slack_emojis
-    standard = JSON.parse(File.open("./emojis.json").read).map{|v| v["short_name"]}
+    standard = JSON.parse(File.open("./data/slack_emojis.json").read).map{|v| v["short_name"]}
     custom = @slack.emoji_list.emoji.keys
 
     [standard, custom].flatten.sort
@@ -71,6 +73,7 @@ class KeywordFilter
     source
       .downcase
       .strip
+      .gsub(/[^a-z ]/i, '')
       .split(SPACE)
       .reject{|w| Stopwords.is? w }
       .reject{|w| HolidayStopwords.is? w }
@@ -89,6 +92,7 @@ class HolidayStopwords
     festival
     global
     go
+    great
     international
     language
     national
