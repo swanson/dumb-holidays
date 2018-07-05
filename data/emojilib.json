@@ -138,7 +138,7 @@
     "category": "people"
   },
   "zany": {
-    "keywords": ["face", "goofy", "crazy"],
+    "keywords": ["face", "goofy", "crazy", "goof", "wacky"],
     "char": "🤪",
     "fitzpatrick_scale": false,
     "category": "people"
@@ -1764,7 +1764,7 @@
     "category": "people"
   },
   "tshirt": {
-    "keywords": ["fashion", "cloth", "casual", "shirt", "tee"],
+    "keywords": ["fashion", "cloth", "casual", "shirt", "tee", "pajamas"],
     "char": "👕",
     "fitzpatrick_scale": false,
     "category": "people"
@@ -2652,7 +2652,7 @@
     "category": "animals_and_nature"
   },
   "chestnut": {
-    "keywords": ["food", "squirrel"],
+    "keywords": ["food", "squirrel", "almond"],
     "char": "🌰",
     "fitzpatrick_scale": false,
     "category": "animals_and_nature"
@@ -3150,7 +3150,7 @@
     "category": "food_and_drink"
   },
   "egg": {
-    "keywords": ["food", "chicken", "breakfast"],
+    "keywords": ["food", "chicken", "breakfast", "eggs"],
     "char": "🥚",
     "fitzpatrick_scale": false,
     "category": "food_and_drink"
@@ -3180,7 +3180,7 @@
     "category": "food_and_drink"
   },
   "meat_on_bone": {
-    "keywords": ["good", "food", "drumstick"],
+    "keywords": ["good", "food", "drumstick", "barbecue", "ribs", "bbq"],
     "char": "🍖",
     "fitzpatrick_scale": false,
     "category": "food_and_drink"
@@ -3204,7 +3204,7 @@
     "category": "food_and_drink"
   },
   "fries": {
-    "keywords": ["chips", "snack", "fast food"],
+    "keywords": ["snack", "fast food"],
     "char": "🍟",
     "fitzpatrick_scale": false,
     "category": "food_and_drink"
@@ -3240,7 +3240,7 @@
     "category": "food_and_drink"
   },
   "spaghetti": {
-    "keywords": ["food", "italian", "noodle"],
+    "keywords": ["food", "italian", "noodle", "macaroni"],
     "char": "🍝",
     "fitzpatrick_scale": false,
     "category": "food_and_drink"
@@ -3335,12 +3335,6 @@
     "fitzpatrick_scale": false,
     "category": "food_and_drink"
   },
-  "dango": {
-    "keywords": ["food", "dessert", "sweet", "japanese", "barbecue", "meat"],
-    "char": "🍡",
-    "fitzpatrick_scale": false,
-    "category": "food_and_drink"
-  },
   "shaved_ice": {
     "keywords": ["hot", "dessert", "summer"],
     "char": "🍧",
@@ -3366,7 +3360,7 @@
     "category": "food_and_drink"
   },
   "cake": {
-    "keywords": ["food", "dessert"],
+    "keywords": ["food", "dessert", "cheesecake"],
     "char": "🍰",
     "fitzpatrick_scale": false,
     "category": "food_and_drink"
@@ -3396,7 +3390,7 @@
     "category": "food_and_drink"
   },
   "chocolate_bar": {
-    "keywords": ["food", "snack", "dessert", "sweet"],
+    "keywords": ["food", "snack", "dessert", "sweet", "chocolate"],
     "char": "🍫",
     "fitzpatrick_scale": false,
     "category": "food_and_drink"
@@ -3420,7 +3414,7 @@
     "category": "food_and_drink"
   },
   "cookie": {
-    "keywords": ["food", "snack", "oreo", "chocolate", "sweet", "dessert"],
+    "keywords": ["food", "snack", "oreo", "chocolote chip", "sweet", "dessert"],
     "char": "🍪",
     "fitzpatrick_scale": false,
     "category": "food_and_drink"
@@ -3450,7 +3444,7 @@
     "category": "food_and_drink"
   },
   "wine_glass": {
-    "keywords": ["drink", "beverage", "drunk", "alcohol", "booze"],
+    "keywords": ["drink", "beverage", "drunk", "alcohol", "booze", "sangria"],
     "char": "🍷",
     "fitzpatrick_scale": false,
     "category": "food_and_drink"
@@ -3744,7 +3738,7 @@
     "category": "activity"
   },
   "martial_arts_uniform": {
-    "keywords": ["judo", "karate", "taekwondo"],
+    "keywords": ["judo", "karate", "taekwondo", "ninja"],
     "char": "🥋",
     "fitzpatrick_scale": false,
     "category": "activity"
@@ -3768,7 +3762,7 @@
     "category": "activity"
   },
   "climbing_man": {
-    "keywords": ["sports", "hobby", "man", "male", "rock"],
+    "keywords": ["sports", "hobby", "man", "male", "rock", "hiking", "hike"],
     "char": "🧗‍♂️",
     "fitzpatrick_scale": true,
     "category": "activity"
@@ -5484,7 +5478,7 @@
     "category": "objects"
   },
   "love_letter": {
-    "keywords": ["email", "like", "affection", "envelope", "valentines"],
+    "keywords": ["email", "like", "affection", "envelope", "valentines", "card"],
     "char": "💌",
     "fitzpatrick_scale": false,
     "category": "objects"
@@ -5682,7 +5676,7 @@
     "category": "objects"
   },
   "green_book": {
-    "keywords": ["read", "library", "knowledge", "study"],
+    "keywords": ["read", "library", "knowledge", "study", "comic", "comic book"],
     "char": "📗",
     "fitzpatrick_scale": false,
     "category": "objects"
@@ -5874,7 +5868,7 @@
     "category": "objects"
   },
   "heart": {
-    "keywords": ["love", "like", "valentines"],
+    "keywords": ["love", "like", "valentines", "thank"],
     "char": "❤️",
     "fitzpatrick_scale": false,
     "category": "symbols"
@@ -6408,7 +6402,7 @@
     "category": "symbols"
   },
   "interrobang": {
-    "keywords": ["wat", "punctuation", "surprise"],
+    "keywords": ["wat", "punctuation", "surprise", "interruption"],
     "char": "⁉️",
     "fitzpatrick_scale": false,
     "category": "symbols"
@@ -6600,7 +6594,7 @@
     "category": "symbols"
   },
   "potable_water": {
-    "keywords": ["blue-square", "liquid", "restroom", "cleaning", "faucet"],
+    "keywords": ["blue-square", "liquid", "restroom", "cleaning", "faucet", "clean"],
     "char": "🚰",
     "fitzpatrick_scale": false,
     "category": "symbols"
@@ -6996,7 +6990,7 @@
     "category": "symbols"
   },
   "symbols": {
-    "keywords": ["blue-square", "music", "note", "ampersand", "percent", "glyphs", "characters"],
+    "keywords": ["blue-square", "music", "ampersand", "percent", "glyphs", "characters"],
     "char": "🔣",
     "fitzpatrick_scale": false,
     "category": "symbols"
@@ -7050,7 +7044,7 @@
     "category": "symbols"
   },
   "heavy_division_sign": {
-    "keywords": ["divide", "math", "calculation"],
+    "keywords": ["divide", "math", "calculation", "decimal", "fraction"],
     "char": "➗",
     "fitzpatrick_scale": false,
     "category": "symbols"
@@ -8790,7 +8784,7 @@
     "category": "flags"
   },
   "sweden": {
-    "keywords": ["se", "flag", "nation", "country", "banner"],
+    "keywords": ["se", "flag", "nation", "country", "banner", "swedish"],
     "char": "🇸🇪",
     "fitzpatrick_scale": false,
     "category": "flags"

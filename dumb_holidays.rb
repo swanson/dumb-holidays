@@ -89,17 +89,21 @@ class HolidayStopwords
     day
     earth
     festival
+    free
     global
     go
     great
     international
     language
     national
+    official
     pride
+    remembrance
     solidarity
     take
     tech
     thing
+    treat
     work
     worker
     world
